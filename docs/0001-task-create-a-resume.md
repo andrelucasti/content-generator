@@ -26,8 +26,7 @@ Following the Onion Architecture:
 - Handle MongoDB connection and configuration
 
 **Application Layer:**
-- Create ResumeService to receive resume submissions by `CreateResumeUseCase`. It should be annoted using the `@Tools` import org.springframework.ai.tool.annotation.Tool;
-- Implement request/response DTOs using Java records
+- Create ResumeService to receive resume submissions by `CreateResumeUseCase`. It should be annotated using the `@Tools` import org.springframework.ai.tool.annotation.Tool;
 - Implement exception handling
 
 **Dependencies:**
