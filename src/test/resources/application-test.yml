@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: content-generator-test
+  data:
+    mongodb:
+      # These properties will be overridden by TestContainers
+      host: localhost
+      port: 27017
+      database: content-generator-test
+      auto-index-creation: true 
