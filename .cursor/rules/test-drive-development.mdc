@@ -1,0 +1,31 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+
+# TDD Rules
+
+1. **One Test at a Time**
+   - Write only one test
+   - Run it to see it fail (RED)
+   - Write minimal code to make it pass (GREEN)
+   - Refactor if needed
+   - Only then move to the next test
+
+2. **Test Granularity**
+   - Start with core domain tests
+   - Move outward following Onion Architecture
+   - Test one behavior per test
+
+3. **Commit Cycle**
+   - Commit after each RED-GREEN-REFACTOR cycle
+   - Include both test and implementation in commit
+   - Use descriptive commit messages
+
+4. **Test Organization**
+   - Follow the same package structure as production code
+   - Name test classes with suffix "Test"
+   - Group related tests in nested classes if needed
+

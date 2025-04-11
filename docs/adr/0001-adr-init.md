@@ -22,6 +22,13 @@ The project is a content generation platform designed to create and manage conte
 - Relational Database (e.g., PostgreSQL)
 - Other Event Brokers (e.g., Solace, RabbitMQ)
 
+## Technical Stack
+
+- Java 21 (LTS)
+- Spring Boot
+- MongoDB
+- Kafka
+
 ## Decision Outcome
 
 Chosen option: "Modular Monolithic Architecture with DDD and Onion Architecture", because it provides a structured approach to manage complexity while allowing for future scalability. Kafka is chosen as the event broker for its robustness and widespread adoption in event-driven architectures. MongoDB is selected for its flexibility and integration with Spring Boot.

@@ -1,0 +1,52 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## Cursor Rule File for Onion Architecture
+
+Define architectural boundaries, responsibilities, and enforce package naming conventions to maintain a clean, decoupled codebase using Onion Architecture.
+
+---
+
+### Business Layer
+
+Package: `io.andrelucas.business`
+
+- Contains domain objects and business rules
+- All core business logic must reside here
+- No direct dependencies on external services or data providers
+- Should be fully testable in isolation
+
+---
+
+### Data Provider Layer
+
+Package: `io.andrelucas.data-provider`
+
+- Responsible for data persistence and access logic (e.g., repositories)
+- Interacts with the Business Layer through interfaces defined in the business package
+- Ensure data integrity and transactional consistency
+- Avoid embedding business logic in this layer
+
+---
+
+### Application Layer
+
+Package: `io.andrelucas.application`
+
+- Entry point of the system (e.g., Spring Boot app, REST controllers, consumers)
+- Contains wiring, configuration, and orchestration logic
+- Hosts integration tests and ensures modules are correctly assembled
+- Must not contain business rules
+
+---
+
+### Third-Party Layer
+
+Package: `io.andrelucas.third-party`
+
+- Handles external service integrations (e.g., APIs, Solace, Kafka, Auth providers)
+- Must implement resilience mechanisms: retries, timeouts, fallbacks
+- Convert external data formats to internal representations
+- Must not leak external dependencies into the business layer

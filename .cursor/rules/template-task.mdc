@@ -1,0 +1,78 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## 🛠 Task Rule Template: Task Definition & Structure
+
+Use this template to describe tasks clearly and consistently. Each section serves a specific purpose to ensure alignment, quality, and testability of the work.
+
+---
+
+### 📘 Context
+_Explain **why** this task exists and what problem it solves._
+
+This section should include background information, business context, or architectural decisions that led to the creation of this task.
+
+---
+
+### 🔧 Technical Details
+_Explain **how** the implementation should be approached._
+
+Include architectural decisions, relevant libraries, service interactions, data models, external systems (e.g., Solace, MongoDB), and any technical constraints or guidelines.
+
+---
+
+### ✅ Acceptance Criteria
+_Define **what must be true** for the task to be considered done._
+
+Write clear, measurable criteria.
+
+- [ ] Business behavior is fulfilled
+- [ ] Output is verifiable via UI/API/database/logs/etc.
+- [ ] Matches expected user experience and system state
+
+---
+
+### 🧪 Test Scenarios
+
+Break down testing responsibilities by test level. Each scenario should be based on the Acceptance Criteria.
+
+---
+
+#### 🔹 Unit Tests
+_Validate isolated components with mocked dependencies._
+
+Examples:
+- [ ] Service returns correct response when given valid input
+- [ ] Mapper converts DTO to entity correctly
+
+---
+
+#### 🔸 Integration Tests
+_Validate the interaction between multiple components or systems._
+
+Examples:
+- [ ] Repository saves and retrieves data from MongoDB
+- [ ] Service interacts correctly with Solace messaging client
+
+---
+
+#### 🟢 End-to-End (E2E) Tests
+_Simulate real-world flows through the entire system._
+
+Examples:
+- [ ] Create an entity through API and validate it end-to-end
+- [ ] Validate UI reflects data after system workflow is completed
+
+---
+
+#### ✅ Acceptance Tests
+_Mirror the Acceptance Criteria in test automation form._
+
+These are often written in a business-readable format (e.g., Gherkin if using Cucumber).
+
+- [ ] All critical user flows are covered
+- [ ] Tests reflect the expected business rules
+
+---

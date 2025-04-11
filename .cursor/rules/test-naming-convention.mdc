@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Test Naming Convention Rule
+
+- Test names should follow the convention: "Should...When..."
+- Example: `ShouldThrowExceptionWhenFileNotFound`
+- This convention helps in clearly understanding the purpose and scenario of the test.
