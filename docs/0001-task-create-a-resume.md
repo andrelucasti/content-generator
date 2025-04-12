@@ -38,7 +38,7 @@ Following the Onion Architecture:
 
 ### ✅ Acceptance Criteria
 
-- [ ] System can receive a resume data (topic and content) by the `ResumeService` using the `@Tool` annotation
+- [ ] System can receive a resume data (topic and content) by the `ResumeTools` using the `@Tool` annotation
 - [ ] Resume data is validated:
   - Topic cannot be empty and has a maximum length of 200 characters
   - Content cannot be empty
@@ -74,7 +74,7 @@ Following the Onion Architecture:
 - [ ] MongoDB indexes are properly created
 
 **Application Layer:**
-- [ ] Receive resume data by the `ResumeService` using the `@Tool` annotation
+- [ ] Receive resume data by the `ResumeTools` using the `@Tool` annotation
 - [ ] Validation errors are properly handled and returned
 - [ ] Response format is correct
 

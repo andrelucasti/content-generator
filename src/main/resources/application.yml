@@ -8,6 +8,9 @@ spring:
       host: localhost
       port: 27017
       database: content-generator
+      username: content-generator
+      password: content-generator
+      authentication-database: admin
       auto-index-creation: true
   ai:
     mcp:
