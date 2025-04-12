@@ -17,7 +17,7 @@ Following the Onion Architecture:
     - content (String)
     - createdAt (DateTime)
     - updatedAt (DateTime)
-- Create `CreateResumeUseCase` interface in the business layer
+- Create `CreateResumeUseCase` implementation in the business layer the should have as dependency injection `ResumeRepository`
 - Define `ResumeRepository` interface for data persistence
 
 **Data Provider Layer:**
@@ -26,25 +26,22 @@ Following the Onion Architecture:
 - Handle MongoDB connection and configuration
 
 **Application Layer:**
-- Create REST endpoint to receive resume submissions
-- Implement request/response DTOs
-- Handle input validation
+- Create ResumeService to receive resume submissions by `CreateResumeUseCase`. It should be annotated using the `@Tools` import org.springframework.ai.tool.annotation.Tool;
 - Implement exception handling
 
 **Dependencies:**
 - Spring Boot
 - Spring Data MongoDB
-- Validation API
-- Lombok (for reducing boilerplate)
+- Spring AI @Tools annotation 
 
 ---
 
 ### ✅ Acceptance Criteria
 
-- [ ] System can receive a POST request with resume data (topic and content)
+- [ ] System can receive a resume data (topic and content) by the `ResumeTools` using the `@Tool` annotation
 - [ ] Resume data is validated:
   - Topic cannot be empty and has a maximum length of 200 characters
-  - Content cannot be empty and has a maximum length of 5000 characters
+  - Content cannot be empty
 - [ ] Resume is successfully stored in MongoDB
 - [ ] System returns appropriate response:
   - Success: Returns created resume with generated ID
@@ -76,14 +73,14 @@ Following the Onion Architecture:
 - [ ] Timestamps are correctly set when saving
 - [ ] MongoDB indexes are properly created
 
-**API Layer:**
-- [ ] POST endpoint correctly processes valid resume submission
+**Application Layer:**
+- [ ] Receive resume data by the `ResumeTools` using the `@Tool` annotation
 - [ ] Validation errors are properly handled and returned
-- [ ] Response format matches API specification
+- [ ] Response format is correct
 
 #### 🟢 End-to-End (E2E) Tests
 
-- [ ] Complete flow from API submission to database storage works
+- [ ] Complete flow from ResumeService to ResumeRepository should be working and save the resume data in the database
 - [ ] System properly handles concurrent resume submissions
 - [ ] Performance meets acceptable thresholds
 

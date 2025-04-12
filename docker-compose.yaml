@@ -1,0 +1,19 @@
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: content-generator
+      MONGO_INITDB_ROOT_PASSWORD: content-generator
+      MONGO_INITDB_DATABASE: content-generator
+    ports:
+      - "27017:27017"
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://content-generator:content-generator@mongo:27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: content-generator
+      ME_CONFIG_MONGODB_ADMINPASSWORD: content-generator
+      ME_CONFIG_BASICAUTH: false

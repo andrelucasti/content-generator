@@ -1,6 +1,28 @@
 spring:
   application:
     name: content-generator
+  main:
+    banner-mode: off
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: content-generator
+      username: content-generator
+      password: content-generator
+      authentication-database: admin
+      auto-index-creation: true
+  ai:
+    mcp:
+      server:
+        resource-change-notification: true
+        tool-change-notification: true
+        prompt-change-notification: true
+        name: webflux-mcp-server
+        version: 1.0.0
+        type: SYNC
+        sse-message-endpoint: /mcp/messages
 
-server:
-  port: 8181
+logging:
+  file:
+    name: ./target/logs/content-generator.log
