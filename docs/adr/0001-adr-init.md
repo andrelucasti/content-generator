@@ -1,6 +1,7 @@
 | status | date       | decision-makers | consulted | informed |
 | ------ | ---------- | --------------- | --------- | -------- |
 | Draft  | 2025-04-10 | André Lucas   | André Lucas | André Lucas    |
+| Accepted  | 2025-04-10 | André Lucas   | André Lucas | André Lucas    |
 
 # Integration of Blog Feature with Modular Monolithic Architecture
 

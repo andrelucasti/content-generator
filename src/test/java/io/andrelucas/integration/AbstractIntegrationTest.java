@@ -17,7 +17,7 @@ public abstract class AbstractIntegrationTest {
     private static final DockerImageName MONGODB_IMAGE = DockerImageName.parse("mongo:6.0");
     
     @Container
-    private static final MongoDBContainer mongoDBContainer = new MongoDBContainer(MONGODB_IMAGE);
+    public static final MongoDBContainer mongoDBContainer = new MongoDBContainer(MONGODB_IMAGE);
     
     @DynamicPropertySource
     static void setProperties(DynamicPropertyRegistry registry) {
